@@ -1,0 +1,11 @@
+﻿@model TFTrainer.Models.User
+
+<h2>Bem vindo @Model.UserName!</h2>
+
+<ul>
+    <li>Email: @Model.Email</li>
+    <li>Name: @Model.Name</li>
+    <li>Id: @Model.Id</li>
+</ul>
+
+<a asp-controller="Login" asp-action="Logout">Logout</a>

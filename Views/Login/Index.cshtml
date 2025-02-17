@@ -1,0 +1,25 @@
+﻿@model LoginViewModel
+
+@{
+    var successMessage = TempData["SuccessMessage"] as string;
+}
+
+@if(!string.IsNullOrEmpty(successMessage))
+{
+    <div class="alert alert-success">
+        @successMessage
+    </div>
+}
+
+<div>
+    <form asp-controller="Login" asp-action="Auth" method="post">
+        <label asp-for="Email" class="form-label">Email</label>
+        <input asp-for="Email" class="form-control" />
+
+        <label asp-for="Password" class="form-label">Senha</label>
+        <input asp-for="Password" type="password" class="form-control" />
+
+        <button type="submit" class="btn btn-primary mt-2">Login</button>
+    </form>
+    <p>Ainda não é cadastrado? <a asp-controller="Login" asp-action="Register">cadastre-se</a></p>
+</div>
